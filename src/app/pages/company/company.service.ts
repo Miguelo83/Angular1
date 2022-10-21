@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
+import { UserResponseI } from 'src/app/auth/interfaces/user';
 import { environment } from 'src/environments/environment';
 import { CompanyI } from './company';
 
@@ -17,4 +18,13 @@ export class CompanyService {
     this.companies$= this.http.get<CompanyI[]>(environment.baseUrl + '/company');
     return this.companies$;
   }
+  delete(id: string): Observable<UserResponseI | void> {
+    return this.http.delete<UserResponseI | void>(`${environment.baseUrl}/company/${id}`).pipe(
+      map((res: UserResponseI) => {
+        return res;
+        })
+        );   
+  
+  }
+
 }

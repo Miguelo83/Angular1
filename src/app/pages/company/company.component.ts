@@ -21,7 +21,7 @@ export class CompanyComponent implements OnInit {
 
   ngOnInit(): void {
     this.companySvc.getAllCompanies().subscribe(res => {
-      console.log(res);
+      console.log("companies", res);	
     });
 
     this.getCompanies();
@@ -32,14 +32,21 @@ getCompanies(): void {
     this.dataSource = new MatTableDataSource<CompanyI>(companies);
   });
  }
+ 
+//  onDelete(id: string): void {
+//   console.log(id);
+//   this.companySvc.delete(id).subscribe(res => {
+//     console.log(res);
+//     this.getCompanies();
+//   }
 
-onEdit(id: number): void {
-  console.log( id);
+//   );  
 
-}
-onDelete(id: number): void {
-  console.log(id);
-} 
+// onEdit(id: number): void {
+//   console.log( id);
+
+// }
+
 
 
 
