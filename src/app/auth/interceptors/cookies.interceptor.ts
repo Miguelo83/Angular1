@@ -42,8 +42,8 @@ export class CookiesInterceptor implements HttpInterceptor {
 
   handlerError(error: HttpErrorResponse) {
     switch (error.status) {
-      case 401:
-        console.log('No autorizado');
+      case 400:
+        console.log("status 400");
         break;
       case 403:
         console.log('No autorizado');

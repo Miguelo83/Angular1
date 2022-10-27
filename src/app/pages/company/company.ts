@@ -1,11 +1,11 @@
 export interface CompanyI {
-    id: number;
+    id?: number;
     company_name: string;
     company_rut: string;
     dir: string;
-    createdAt: Date;
-    updatedAt: Date;
-    categories: CategoryI[];
+    createdAt?: Date;
+    updatedAt?: Date;
+    categories?: CategoryI[];
 
     
 }

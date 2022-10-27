@@ -10,6 +10,7 @@ import { CompanyI } from './company';
 })
 export class CompanyService {
   companies$ : Observable<CompanyI[]> | undefined;
+  // categories$ : Observable<CategoryI[]> | undefined;
   constructor(
     private http: HttpClient
   
@@ -26,5 +27,16 @@ export class CompanyService {
         );   
   
   }
+  newCompany(company: CompanyI): Observable<UserResponseI | void> {
+    return this.http.post<UserResponseI | void>(`${environment.baseUrl}/company`, company).pipe(
+      map((res: UserResponseI) => {
+        return res;
+        })
+        );
+  }
+
+  // getAllCategories():Observable<CompanyI[]>{    
+  //   this.categories$= this.http.get<CompanyI[]>(environment.baseUrl + '/category');
+  // }
 
 }
