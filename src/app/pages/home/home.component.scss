@@ -1,3 +1,20 @@
+body,
+html {
+  height: 100%;
+}
+
+.bg {
+  /* The image used */
+  background-image: url("https://img.freepik.com/vector-premium/icono-soporte-tecnico-mano-robotica-atencion-al-cliente-apoyo-tecnico_127544-400.jpg?w=2000");
+  /* Full height */
+  height: 100%;
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
 .whatsapp {
     position:fixed;
     width:60px;
