@@ -31,27 +31,21 @@ export class FormComponent implements OnInit {
 
   ngOnInit(): void {
     
-    this.companySvc.getAllCompanies().subscribe(res => {
-      console.log("companies", res);	
-    });
-
    
   }
 
-  onSave(){
-    const valueForm={
-      company_name:this.form.value.company_name,
-      company_rut:this.form.value.company_rut,
-      dir:this.form.value.dir
-    }
+  // onSave(){
+  //   const valueForm={
+  //     company_name:this.form.value.company_name,
+  //     company_rut:this.form.value.company_rut,
+  //     dir:this.form.value.dir
+  //   }
 
-    console.log(this.form.value);
-    this.companySvc.newCompany(valueForm).subscribe(
-      res=>console.log(res)
-      
-    )
-    
-  }
+  //   console.log(this.form.value);
+  //   this.companySvc.newCompany(valueForm).subscribe(
+  //     res=>console.log(res)
+  //   )
+  // }
   close(){
     this.dialogRef.close();
   }
